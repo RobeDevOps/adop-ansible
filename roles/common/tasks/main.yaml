@@ -14,3 +14,5 @@
     name: vm.max_map_count
     value: 262144
     state: present
+    sysctl_file: /etc/sysctl.conf
+    reload: yes

@@ -5,7 +5,7 @@ Set the follow command in the advance configuration for the EC2 instance.
 ```
 #!/bin/bash
 sudo yum update -y
-sudo easy_install pip -y
+sudo easy_install pip git nano -y
 sudo pip install ansible
 ```
 
