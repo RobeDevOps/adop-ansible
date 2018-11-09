@@ -9,3 +9,8 @@
     - yum-utils 
     - device-mapper-persistent-data 
     - lvm2
+
+- sysctl:
+    name: vm.max_map_count
+    value: 262144
+    state: present
