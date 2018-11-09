@@ -1,0 +1,21 @@
+---
+- name: verify docker-ce exists
+  stat: path=/etc/yum.repos.d/docker-ce.repo
+  register: repo_available
+
+- name: add docker-ce repository
+  command: yum-config-manager --add-repo {{docker_repository}}
+  when: not repo_available.stat.exists
+
+- name: install docker-ce
+  yum: name=docker-ce state=present
+  when: ansible_distribution == "CentOS"
+  notify:
+    - restart docker
+
+- name: install docker-io
+  yum: name=docker-io state=present
+  when: ansible_distribution == "Amazon"
+  notify:
+    - restart docker
+

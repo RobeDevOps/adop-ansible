@@ -1,0 +1,21 @@
+---
+- name: verify docker-compose exists
+  stat: path=/usr/local/bin/docker-compose
+  register: docker_compose_file
+
+- name: uname -s 
+  command: uname -s
+  register: uname_s
+  when: not docker_compose_file.stat.exists
+
+- name: uname -m
+  command: uname -m
+  register: uname_m
+  when: not docker_compose_file.stat.exists
+
+- name: Download docker-compose
+  get_url: 
+    url: https://github.com/docker/compose/releases/download/{{release_version}}/docker-compose-{{uname_s.stdout}}-{{uname_m.stdout}}
+    dest: /usr/local/bin/docker-compose
+    mode: 0555
+  when: not docker_compose_file.stat.exists

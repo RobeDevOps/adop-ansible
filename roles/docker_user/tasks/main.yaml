@@ -1,0 +1,13 @@
+---
+- name: Ensure group docker exists
+  group: name=somegroup state=present
+  register: docker_group
+
+- name: Load user based on OS
+  include_vars: "{{ item }}"
+  with_first_found:
+    - "{{ ansible_distribution }}.yaml"
+    - default.yaml
+
+- name: Add the user to docker group
+  user: name={{docker_user}} group=docker

@@ -1,0 +1,8 @@
+---
+- hosts: localhost
+  become: True
+  roles:
+    - common
+    - docker
+    - docker_user
+    - docker_compose

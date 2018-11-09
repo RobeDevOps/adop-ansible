@@ -1,0 +1,11 @@
+---
+- name: yum update
+  yum: name=* state=latest update_cache=yes
+
+- name: yum install utilities 
+  yum: name={{ item }} state=present 
+  with_items:
+    - git 
+    - yum-utils 
+    - device-mapper-persistent-data 
+    - lvm2
