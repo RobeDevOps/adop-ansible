@@ -3,4 +3,4 @@
   git:
     repo: '{{adop_reporitory}}'
     dest: '{{adop_home}}'
-	version: '{{adop_version}}'
+    version: '{{adop_version}}'
