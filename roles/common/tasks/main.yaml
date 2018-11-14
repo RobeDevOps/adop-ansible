@@ -10,7 +10,8 @@
     - device-mapper-persistent-data 
     - lvm2
 
-- sysctl:
+- name: Update file descriptors in sysctl
+  sysctl:
     name: vm.max_map_count
     value: 262144
     state: present
