@@ -2,5 +2,5 @@
 - name: Clone adop-docker-compose
   git:
     repo: '{{adop_reporitory}}'
-    dest: '{{adop_home}}'
+    dest: '{{adop_home}}/adop-docker-compose'
     version: '{{adop_version}}'
