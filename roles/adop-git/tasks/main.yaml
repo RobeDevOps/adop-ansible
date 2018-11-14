@@ -1,6 +1,0 @@
----
-- name: Clone adop-docker-compose
-  git:
-    repo: {{adop_reporitory}}
-    dest: {{adop_home}}
-	version: {{adop_version}}
