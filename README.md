@@ -10,10 +10,6 @@ sudo easy_install pip
 sudo pip install ansible
 ```
 
-## Manual configuration due ElasticSearch required this setting (pending tasks to automate)
-sysctl -w vm.max_map_count=262144
-
-
 ## Ansible playook to instsall ADOP-C dependencies.
 
 This playbook automates the process of packages installation and some configuration defined here
