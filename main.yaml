@@ -6,4 +6,4 @@
     - docker
     - docker_user
     - docker_compose
-    - adop_git
+    - { role: adop_git, become: false }
