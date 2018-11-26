@@ -11,3 +11,4 @@
     path: '{{adop_home}}/adop-docker-compose'
     owner: centos
     group: centos
+    recurse: yes
