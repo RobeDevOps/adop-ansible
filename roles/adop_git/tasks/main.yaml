@@ -1,7 +1,7 @@
 ---
 - name: Create target directory
   file: 
-    path: '{{/adop_home}}/adop-docker-compose'
+    path: '{{adop_home}}/adop-docker-compose'
     state: directory
     owner: centos
     group: centos
