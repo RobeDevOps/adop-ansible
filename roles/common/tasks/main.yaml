@@ -3,12 +3,13 @@
   yum: name=* state=latest update_cache=yes
 
 - name: yum install utilities 
-  yum: name={{ item }} state=present 
-  with_items:
-    - git 
-    - yum-utils 
-    - device-mapper-persistent-data 
-    - lvm2
+  yum: 
+    name:
+      - git 
+      - yum-utils 
+      - device-mapper-persistent-data 
+      - lvm2
+    state: present
 
 - name: Update file descriptors in sysctl
   sysctl:
