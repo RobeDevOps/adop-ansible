@@ -4,10 +4,11 @@
     repo: '{{adop_reporitory}}'
     dest: '{{adop_home}}/adop-docker-compose'
     version: '{{adop_version}}'
+    force: yes
 
 - name: Change owners 
   file: 
     path: '{{adop_home}}/adop-docker-compose'
-    state: directory
     owner: centos
     group: centos
+    recurse: yes
