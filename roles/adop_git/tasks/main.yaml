@@ -4,6 +4,7 @@
     repo: '{{adop_reporitory}}'
     dest: '{{adop_home}}/adop-docker-compose'
     version: '{{adop_version}}'
+    force: yes
 
 - name: Change owners 
   file: 
