@@ -1,10 +1,10 @@
 ---
 - name: Create target directory
   file: 
-    path: /src/www 
+    path: '{{/adop_home}}/adop-docker-compose'
     state: directory
     owner: centos
-    owner: centos
+    group: centos
 
 - name: Clone adop-docker-compose
   git:
