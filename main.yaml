@@ -7,3 +7,4 @@
     - docker_user
     - docker_compose
     - adop_git
+    - serverspec

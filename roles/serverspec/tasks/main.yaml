@@ -1,5 +1,13 @@
 
 - name: yum install ruby tools 
   yum: 
-    name: ${ruby_tools}
+    name: "{{ruby_tools}}"
     state: present
+
+- name: git pull rbenv-installer
+  git:
+    repo: https://github.com/rbenv/rbenv-installer/raw/master/bin/rbenv-installer
+    dest: '{{adop_home}}/rbenv-installer'
+
+- name: install rbenv-installer
+  script: '{{adop_home}}/rbenv-installer'
