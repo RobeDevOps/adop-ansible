@@ -5,9 +5,9 @@
     state: present
 
 - name: creating the bashrc file
-  file:
-    name: bashrc
-    dest: '{{adop_home}}.bashrc'
+  template:
+    src: bashrc.j2
+    dest: '{{adop_home}}/.bashrc'
   become: true
   become_user: centos
 
