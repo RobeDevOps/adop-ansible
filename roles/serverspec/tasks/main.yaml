@@ -11,6 +11,9 @@
   become: true
   become_user: centos
 
+- name: source the modification
+  command: source {{adop_home}}/.bashrc
+
 - name: git pull rbenv-installer
   get_url:
     url: https://github.com/rbenv/rbenv-installer/raw/master/bin/rbenv-installer
