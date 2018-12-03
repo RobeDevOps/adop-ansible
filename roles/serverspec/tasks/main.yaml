@@ -1,0 +1,5 @@
+
+- name: yum install ruby tools 
+  yum: 
+    name: ${ruby_tools}
+    state: present
