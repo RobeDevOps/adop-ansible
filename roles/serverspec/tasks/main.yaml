@@ -12,7 +12,7 @@
   become_user: centos
 
 - name: source the modification
-  command: source {{adop_home}}/.bashrc
+  shell: source {{adop_home}}/.bashrc
 
 - name: git pull rbenv-installer
   get_url:
