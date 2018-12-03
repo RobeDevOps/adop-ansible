@@ -5,7 +5,7 @@
     state: present
 
 - name: git pull rbenv-installer
-  git:
+  get_url:
     repo: https://github.com/rbenv/rbenv-installer/raw/master/bin/rbenv-installer
     dest: '{{adop_home}}/rbenv-installer'
 
